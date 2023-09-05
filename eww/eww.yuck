@@ -1,0 +1,12 @@
+(defwindow bar
+    :monitor 0
+    :geometry (geometry :x "20px"
+                        :y "0%x"
+                        :width "30px"
+                        :height "90%"
+                        :anchor "left center")
+    :stacking "fg"
+    :reserve (struts :distance "40px" :side "left")
+    :windowtype "dock"
+    :wm-ignore false
+"example left bar")
