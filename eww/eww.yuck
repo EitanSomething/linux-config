@@ -9,4 +9,5 @@
     :reserve (struts :distance "40px" :side "left")
     :windowtype "dock"
     :wm-ignore false
+    :exclusive true
 "example left bar")
