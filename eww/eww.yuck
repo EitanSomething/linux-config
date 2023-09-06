@@ -1,3 +1,22 @@
+(defpoll brightness_percent :interval "5s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+
+
+(defwidget bottom []
+	(box :orientation "v" 
+		 :space-evenly false  
+         :halign "end"
+		 :class "bottom_modules"
+(bright)))
+
+(defwidget bright []
+        (scale    :class "brightbar"
+                :value brightness_percent
+                :orientation "h"
+                :tooltip "${brightness_percent}%"
+                :max 100
+                :min 0
+                :onchange "brightnessctl set {}%" ))
+      
 (defwindow bar
     :monitor 0
     :geometry (geometry :x "20px"
@@ -10,4 +29,4 @@
     :windowtype "dock"
     :wm-ignore false
     :exclusive true
-"example left bar")
+(bottom))
